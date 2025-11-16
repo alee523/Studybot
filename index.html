@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>ورقة عمل HSE موسعة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+    body { font-family: 'Cairo', sans-serif; background: #eef5f9; margin: 0; padding-top: 70px; }
+    #progressContainer { position: fixed; top:0; left:0; width:100%; background:#cfd8dc; height:14px; z-index:9999; }
+    #progressBar { height:100%; width:0%; background:#1976d2; transition:0.3s; }
+    .container { background:#fff; padding:20px; border-radius:18px; box-shadow:0 4px 20px rgba(0,0,0,0.1); max-width:900px; margin:20px auto; }
+    .question { background:#f1f8ff; padding:15px; border-right:5px solid #1976d2; margin:12px 0; border-radius:10px; }
+    .correct { color:green; font-weight:bold; }
+    .wrong { color:red; font-weight:bold; }
+    #resultsPanel { margin-top:20px; padding:20px; background:#e8f5e9; border-radius:15px; border-right:5px solid #2e7d32; display:none; }
+    #resultsPanel h2 { color:#2e7d32; }
+    button { background:#0d47a1; color:white; padding:12px 25px; border-radius:10px; border:none; cursor:pointer; font-size:18px; display:block; margin:20px auto; }
+    button:hover { background:#08306b; }
+</style>
+</head>
+<body>
+<div id="progressContainer"><div id="progressBar"></div></div>
+<div class="container">
+<h1>اختبار شامل – السلامة والصحة والبيئة (HSE)</h1>
+<h2>أسئلة اختر الإجابة (25 سؤال)</h2>
+
+<!-- 25 MCQ questions -->
+<script>
+let mcqData = [
+ {q:'يهدف نظام HSE إلى:', a:['حماية العمال والبيئة','زيادة التكاليف','تجاهل المخاطر'], c:0},
+ {q:'من أهداف الـ HSE:', a:['حماية البيئة من التلوث','زيادة ساعات العمل','إلغاء التشريعات'], c:0},
+ {q:'المخاطر هي:', a:['احتمال حدوث أذى','مادة كيميائية سامة','نتيجة الحادث'], c:0},
+ {q:'من مخاطر الصحة المهنية:', a:['الضوضاء','السقوط','الحرائق'], c:0},
+ {q:'النظام المختص بالصحة المهنية:', a:['ISO 14001','ISO 45001','ISO 9001'], c:1},
+ {q:'أي مما يلي من مخاطر البيئة؟', a:['الإجهاد الحراري','الضوضاء','التلوث المائي'], c:2},
+ {q:'من أدوات التحكم في المخاطر:', a:['العزل','تجاهل الخطر','زيادة العمل'], c:0},
+ {q:'من إجراءات الطوارئ:', a:['تجاهل التنبيهات','الإخلاء الآمن','الانتظار'], c:1},
+ {q:'ISO 14001 يختص بـ:', a:['الجودة','الصحة المهنية','البيئة'], c:2},
+ {q:'أول خطوة في تقييم المخاطر:', a:['تحديد الخطر','خطة طوارئ','التدريب'], c:0},
+ {q:'من مصادر المخاطر:', a:['الأدوات التالفة','النظافة','التدريب المنتظم'], c:0},
+ {q:'التعرض للمواد الكيميائية يسبب:', a:['أمراض مهنية','زيادة الإنتاج','تقليل المخاطر'], c:0},
+ {q:'تلوث الهواء يسبب:', a:['أمراض تنفسية','زيادة الأكسجين','تحسين الصحة'], c:0},
+ {q:'العمل في أماكن مرتفعة يعتبر:', a:['مخاطر سقوط','مخاطر بيئية','مخاطر نفسية'], c:0},
+ {q:'معدات الوقاية الشخصية تستخدم:', a:['للحماية','لزينة العامل','لزيادة المخاطر'], c:0},
+ {q:'التعرض للضوضاء يسبب:', a:['فقدان السمع','تحسين السمع','زيادة النشاط'], c:0},
+ {q:'الاهتزازات تؤثر على:', a:['العمود الفقري','النظر','التنفس'], c:0},
+ {q:'التعرض للإشعاع يسبب:', a:['أمراض خطيرة','زيادة المناعة','تحسين الصحة'], c:0},
+ {q:'سوء التهوية يؤدي إلى:', a:['اختناق','انتعاش','تحسن التركيز'], c:0},
+ {q:'النفايات الخطرة تعتبر:', a:['مخاطر بيئية','مخاطر نفسية','غير خطرة'], c:0},
+ {q:'خطة الطوارئ تشمل:', a:['الإخلاء','تجاهل الخطر','إغلاق العيون'], c:0},
+ {q:'التدريب المستمر:', a:['يقلل الحوادث','يزيد الحوادث','ليس ضرورياً'], c:0},
+ {q:'التقييم المستمر للمخاطر:', a:['يحسن السلامة','يلغي السلامة','غير مهم'], c:0},
+ {q:'السلامة مسؤولية:', a:['الجميع','الإدارة فقط','العامل فقط'], c:0},
+ {q:'الصيانة الدورية تؤدي إلى:', a:['تقليل الأعطال','زيادة المخاطر','إلغاء الحوادث'], c:0},
+];
+</script>
+<div id="mcqContainer"></div>
+
+<h2>أسئلة صح وخطأ (10)</h2>
+<script>
+let tfData = [
+ {q:'تهتم HSE فقط بالبيئة.', c:false},
+ {q:'إجراءات السلامة تقلل الخسائر.', c:true},
+ {q:'تقييم المخاطر يلغي الخطر تماماً.', c:false},
+ {q:'التدريب جزء من مسؤوليات العامل.', c:true},
+ {q:'الصيانة لا تؤثر على السلامة.', c:false},
+ {q:'التلوث المائي خطر بيئي.', c:true},
+ {q:'الضوضاء لا تسبب ضرراً.', c:false},
+ {q:'خطة الطوارئ تشمل الإخلاء.', c:true},
+ {q:'معدات الوقاية للزينة فقط.', c:false},
+ {q:'الحرائق ضمن مخاطر السلامة.', c:true},
+];
+</script>
+<div id="tfContainer"></div>
+
+<button onclick="finishExam()">إنهاء الاختبار</button>
+<div id="resultsPanel"></div>
+</div>
+
+<audio id="correctSound" src="https://cdn.pixabay.com/audio/2021/08/04/audio_7e5a9a2b57.mp3"></audio>
+<audio id="wrongSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_3e8aad0490.mp3"></audio>
+
+<script>
+let answered = 0;
+let totalQuestions = mcqData.length + tfData.length;
+
+function loadQuestions() {
+    let mcqHTML = '';
+    mcqData.forEach((q,i)=>{
+        mcqHTML += `<div class='question' data-type='mcq' data-id='${i}'><b>${i+1}. ${q.q}</b><br>`;
+        q.a.forEach((ans,j)=>{
+            mcqHTML += `<label><input type='radio' name='mcq${i}' data-index='${j}'> ${ans}</label><br>`;
+        });
+        mcqHTML += `</div>`;
+    });
+    document.getElementById("mcqContainer").innerHTML = mcqHTML;
+
+    let tfHTML = '';
+    tfData.forEach((q,i)=>{
+        tfHTML += `<div class='question' data-type='tf' data-id='${i}'><b>${i+1}. ${q.q}</b><br>`;
+        tfHTML += `<label><input type='radio' name='tf${i}' value='true'> صح</label><br>`;
+        tfHTML += `<label><input type='radio' name='tf${i}' value='false'> خطأ</label><br>`;
+        tfHTML += `</div>`;
+    });
+    document.getElementById("tfContainer").innerHTML = tfHTML;
+}
+loadQuestions();
+
+// Track progress
+function updateProgress(){ document.getElementById('progressBar').style.width = (answered/totalQuestions)*100 + '%'; }
+
+// Detect all answers
+setInterval(()=>{
+    document.querySelectorAll('input[type=radio]').forEach(r=>{
+        if(r.checked && !r.dataset.counted){ r.dataset.counted = true; answered++; updateProgress(); }
+    });
+},300);
+
+// Finish exam
+function finishExam(){
+    let score = 0;
+
+    // MCQ correction
+    document.querySelectorAll('[data-type=mcq]').forEach(div=>{
+        let id = div.getAttribute('data-id');
+        let correct = mcqData[id].c;
+        let options = div.querySelectorAll('input');
+        options.forEach(o=>{
+            let idx = o.getAttribute('data-index');
+            if(idx == correct){ o.parentElement.classList.add('correct'); }
+            if(o.checked){ if(idx==correct){ score++; correctSound.play(); } else{ o.parentElement.classList.add('wrong'); wrongSound.play(); }}
+        });
+    });
+
+    // TF correction
+    document.querySelectorAll('[data-type=tf]').forEach(div=>{
+        let id = div.getAttribute('data-id');
+        let correct = tfData[id].c;
+        let selected = div.querySelector('input:checked');
+        if(selected){
+            if(String(correct) === selected.value){ score++; correctSound.play(); selected.parentElement.classList.add('correct'); }
+            else { wrongSound.play(); selected.parentElement.classList.add('wrong'); }
+        }
+    });
+
+    let percent = (score/totalQuestions)*100;
+    document.getElementById('resultsPanel').style.display = 'block';
+    document.getElementById('resultsPanel').innerHTML = `<h2>نتيجتك</h2><p>${score} من ${totalQuestions}</p><p>النسبة: ${percent.toFixed(1)}%</p>`;
+}
+</script>
+</body>
+</html>
