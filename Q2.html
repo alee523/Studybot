@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>القدرة المائية</title>
+<title>الفروق بين المفاهيم</title>
 
 <style>
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 .chat {
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 10px;
 }
@@ -23,7 +23,7 @@ body {
     padding: 15px 20px;
     border-radius: 15px;
     margin-bottom: 15px;
-    line-height: 1.8;
+    line-height: 2;
 }
 
 .question {
@@ -32,7 +32,7 @@ body {
 
 .answer {
     background: #111827;
-    border-right: 4px solid #22c55e;
+    border-right: 4px solid #a855f7;
 }
 
 .tooltip {
@@ -44,7 +44,7 @@ body {
 
 .tooltip .tip {
     visibility: hidden;
-    width: 260px;
+    width: 270px;
     background: #1f2937;
     color: #fff;
     text-align: center;
@@ -70,39 +70,26 @@ body {
     cursor: pointer;
 }
 
-ul {
-    padding-right: 20px;
+/* أزرار */
+.buttons {
+    text-align: center;
+    margin-top: 20px;
 }
 
-li {
-    margin-bottom: 8px;
+.btn {
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
 }
-    .btn-link {
-            text-decoration: none;
-        }
 
-        .custom-button {
-            background-color: #007bff;
-            color: white;
-            padding: 15px 40px;
-            font-size: 24px;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .custom-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-        }
-
-        .custom-button:active {
-            transform: translateY(0);
-        }
+.btn:hover {
+    background: #1d4ed8;
+}
 </style>
 
 </head>
@@ -114,9 +101,9 @@ li {
     <!-- السؤال -->
     <div class="message question">
         <span class="tooltip">
-            س2: أحسب القدرة المائية اللازمة لإدارة مضخة تضخ الماء لارتفاع 10 م وبتصرف 50 م³/ساعة
+            س2: أذكر الفرق بين (الكتلة والوزن - الشغل والعزم - طاقة الوضع وطاقة الحركة)
             <span class="tip">
-                القدرة الهيدروليكية تعتمد على كمية الماء (التصرف) والارتفاع والوزن النوعي للمائع
+                المطلوب توضيح الفرق من حيث التعريف والقانون والوحدة
             </span>
         </span>
     </div>
@@ -124,71 +111,73 @@ li {
     <!-- الإجابة -->
     <div class="message answer">
 
-        <p><strong>القانون المستخدم:</strong></p>
+        <p><strong>1) الكتلة والوزن:</strong></p>
+
         <p>
-            القدرة 
-            (<span class="var" title="P = القدرة">P</span>) =
-            التصرف 
-            (<span class="var" title="Q = معدل التدفق">Q</span>) ×
-            الارتفاع 
-            (<span class="var" title="h = الارتفاع">h</span>) ×
-            الوزن النوعي 
-            (<span class="var" title="wt = الوزن النوعي">wt</span>)
+            الكتلة (<span class="var" title="Mass = الكتلة">Mass</span>):
+            كمية المادة في الجسم، ثابتة، وحدتها كجم.
         </p>
 
-        <p><strong>المعطيات:</strong></p>
-        <ul>
-            <li>
-                التصرف (<span class="var" title="Q = معدل التدفق">Q</span>) = 50 م³/ساعة
-            </li>
-            <li>
-                الارتفاع (<span class="var" title="h = الارتفاع">h</span>) = 10 م
-            </li>
-            <li>
-                الوزن النوعي للماء 
-                (<span class="var" title="wt = الوزن النوعي">wt</span>) = 9810 نيوتن/م³
-                <span class="tooltip">ⓘ
-                    <span class="tip">
-                        ناتج من كثافة الماء (1000 كجم/م³) × عجلة الجاذبية (9.81)
-                    </span>
-                </span>
-            </li>
-        </ul>
-
-        <p><strong>تحويل الوحدات:</strong></p>
         <p>
-            Q = 50 ÷ 3600 = 0.01388 م³/ث
-        </p>
-
-        <p><strong>التعويض:</strong></p>
-        <p>
-            P = 0.01388 × 10 × 9810
-        </p>
-
-        <p><strong>النتيجة:</strong></p>
-        <p>
-            <span class="tooltip">
-                P ≈ 1362.5 واط
-                <span class="tip">
-                    1 حصان = 736 واط
-                </span>
+            الوزن (<span class="var" title="Weight = الوزن">Weight</span>):
+            قوة = 
+            <span class="var" title="W = الوزن">W</span> =
+            <span class="var" title="m = الكتلة">m</span> ×
+            <span class="var" title="g = الجاذبية">g</span>
+            <span class="tooltip">ⓘ
+                <span class="tip">يتغير بتغير الجاذبية (المكان)</span>
             </span>
         </p>
 
+        <hr>
+
+        <p><strong>2) الشغل والعزم:</strong></p>
+
         <p>
-            القدرة ≈ 1.85 حصان
+            العزم (<span class="var" title="Torque = العزم">Torque</span>):
+            <span class="var" title="T = العزم">T</span> =
+            <span class="var" title="F = القوة">F</span> ×
+            <span class="var" title="L = الذراع">L</span>
+            <br>وحدته: نيوتن.متر
+        </p>
+
+        <p>
+            الشغل (<span class="var" title="Work = الشغل">Work</span>):
+            حاصل ضرب القوة في الإزاحة
+            <span class="tooltip">ⓘ
+                <span class="tip">ينعدم إذا لم يحدث تحرك</span>
+            </span>
+            <br>وحدته: جول
+        </p>
+
+        <hr>
+
+        <p><strong>3) طاقة الوضع وطاقة الحركة:</strong></p>
+
+        <p>
+            طاقة الوضع (<span class="var" title="PE = طاقة الوضع">PE</span>):
+            <span class="var" title="PE = طاقة الوضع">PE</span> =
+            <span class="var" title="W = الوزن">W</span> ×
+            <span class="var" title="h = الارتفاع">h</span>
+        </p>
+
+        <p>
+            طاقة الحركة (<span class="var" title="KE = طاقة الحركة">KE</span>):
+            <span class="var" title="KE = طاقة الحركة">KE</span> =
+            ½ ×
+            <span class="var" title="m = الكتلة">m</span> ×
+            <span class="var" title="v = السرعة">v</span>²
         </p>
 
     </div>
 
+    <!-- الأزرار -->
+    <div class="buttons">
+        <a href="Q1.html" class="btn">⬅ الذهاب للسؤال الأول</a>
+        <a href="Q3.html" class="btn">➡ الذهاب للسؤال الثالث</a>
+    </div>
+
 </div>
 
-      <a href="Q1.html" class="btn-link">
-        <button class="custom-button">question 1</button>
-    </a>
-    
-      <a href="Q3.html" class="btn-link">
-        <button class="custom-button">question 3</button>
-    </a>
 </body>
 </html>
