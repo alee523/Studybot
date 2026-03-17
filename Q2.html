@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>القدرة المائية</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0f172a;
+    font-family: "Segoe UI", Tahoma;
+    direction: rtl;
+    color: #e5e7eb;
+}
+
+.chat {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.question {
+    background: #1e293b;
+}
+
+.answer {
+    background: #111827;
+    border-right: 4px solid #22c55e;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+.tooltip .tip {
+    visibility: hidden;
+    width: 260px;
+    background: #1f2937;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.tooltip:hover .tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.var {
+    color: #f87171;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+}
+
+ul {
+    padding-right: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="chat">
+
+    <!-- السؤال -->
+    <div class="message question">
+        <span class="tooltip">
+            س2: أحسب القدرة المائية اللازمة لإدارة مضخة تضخ الماء لارتفاع 10 م وبتصرف 50 م³/ساعة
+            <span class="tip">
+                القدرة الهيدروليكية تعتمد على كمية الماء (التصرف) والارتفاع والوزن النوعي للمائع
+            </span>
+        </span>
+    </div>
+
+    <!-- الإجابة -->
+    <div class="message answer">
+
+        <p><strong>القانون المستخدم:</strong></p>
+        <p>
+            القدرة 
+            (<span class="var" title="P = القدرة">P</span>) =
+            التصرف 
+            (<span class="var" title="Q = معدل التدفق">Q</span>) ×
+            الارتفاع 
+            (<span class="var" title="h = الارتفاع">h</span>) ×
+            الوزن النوعي 
+            (<span class="var" title="wt = الوزن النوعي">wt</span>)
+        </p>
+
+        <p><strong>المعطيات:</strong></p>
+        <ul>
+            <li>
+                التصرف (<span class="var" title="Q = معدل التدفق">Q</span>) = 50 م³/ساعة
+            </li>
+            <li>
+                الارتفاع (<span class="var" title="h = الارتفاع">h</span>) = 10 م
+            </li>
+            <li>
+                الوزن النوعي للماء 
+                (<span class="var" title="wt = الوزن النوعي">wt</span>) = 9810 نيوتن/م³
+                <span class="tooltip">ⓘ
+                    <span class="tip">
+                        ناتج من كثافة الماء (1000 كجم/م³) × عجلة الجاذبية (9.81)
+                    </span>
+                </span>
+            </li>
+        </ul>
+
+        <p><strong>تحويل الوحدات:</strong></p>
+        <p>
+            Q = 50 ÷ 3600 = 0.01388 م³/ث
+        </p>
+
+        <p><strong>التعويض:</strong></p>
+        <p>
+            P = 0.01388 × 10 × 9810
+        </p>
+
+        <p><strong>النتيجة:</strong></p>
+        <p>
+            <span class="tooltip">
+                P ≈ 1362.5 واط
+                <span class="tip">
+                    1 حصان = 736 واط
+                </span>
+            </span>
+        </p>
+
+        <p>
+            القدرة ≈ 1.85 حصان
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
