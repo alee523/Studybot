@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>حل سؤال فيزياء</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0f172a;
+    font-family: "Segoe UI", Tahoma;
+    direction: rtl;
+    color: #e5e7eb;
+}
+
+/* الحاوية */
+.chat {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/* صندوق الرسالة */
+.message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* سؤال */
+.question {
+    background: #1e293b;
+    align-self: flex-start;
+}
+
+/* إجابة */
+.answer {
+    background: #111827;
+    border-right: 4px solid #3b82f6;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+.tooltip .tip {
+    visibility: hidden;
+    width: 260px;
+    background: #1f2937;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.tooltip:hover .tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* متغيرات */
+.var {
+    color: #f87171;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+}
+
+/* قائمة */
+ul {
+    padding-right: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="chat">
+
+    <!-- السؤال -->
+    <div class="message question">
+        <span class="tooltip">
+            س1: احسب القوة المؤثرة من كتلة مقدارها 1000 كجم على سطح الأرض
+            <span class="tip">
+                لحساب القوة المؤثرة نستخدم العلاقة: القوة = الكتلة × العجلة
+                وهنا العجلة هي عجلة الجاذبية الأرضية
+            </span>
+        </span>
+    </div>
+
+    <!-- الإجابة -->
+    <div class="message answer">
+
+        <p><strong>القانون المستخدم:</strong></p>
+        <p>
+            تُعرّف القوة 
+            (<span class="var" title="F = القوة المؤثرة">F</span>) 
+            بأنها حاصل ضرب الكتلة 
+            (<span class="var" title="m = الكتلة">m</span>) 
+            في العجلة 
+            (<span class="var" title="a = العجلة">a</span>)
+        </p>
+
+        <p><strong>المعطيات:</strong></p>
+        <ul>
+            <li>
+                الكتلة (<span class="var" title="m = الكتلة">m</span>) = 1000 كجم
+            </li>
+            <li>
+                عجلة الجاذبية 
+                (<span class="var" title="g = عجلة الجاذبية الأرضية">g</span>) = 9.81 م/ث²
+                <span class="tooltip">ⓘ
+                    <span class="tip">
+                        القوة التي تؤثر على 1 كجم تساوي 9.81 نيوتن
+                    </span>
+                </span>
+            </li>
+        </ul>
+
+        <p><strong>التعويض في المعادلة:</strong></p>
+        <p>
+            (<span class="var" title="القوة">F</span> = 
+            <span class="var" title="الكتلة">m</span> × 
+            <span class="var" title="الجاذبية">g</span>)
+        </p>
+        <p>
+            F = 1000 × 9.81
+        </p>
+
+        <p><strong>النتيجة:</strong></p>
+        <p>
+            <span class="tooltip">
+                القوة = 9810 نيوتن
+                <span class="tip">
+                    النيوتن هو وحدة قياس القوة ويساوي القوة اللازمة لإكساب 1 كجم عجلة 1 م/ث²
+                </span>
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
