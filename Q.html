@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>حل سؤال فيزياء</title>
+<title>وحدات القياس</title>
 
 <style>
 body {
@@ -13,34 +13,28 @@ body {
     color: #e5e7eb;
 }
 
-/* الحاوية */
 .chat {
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto;
     padding: 10px;
 }
 
-/* صندوق الرسالة */
 .message {
     padding: 15px 20px;
     border-radius: 15px;
     margin-bottom: 15px;
-    line-height: 1.8;
+    line-height: 2;
 }
 
-/* سؤال */
 .question {
     background: #1e293b;
-    align-self: flex-start;
 }
 
-/* إجابة */
 .answer {
     background: #111827;
-    border-right: 4px solid #3b82f6;
+    border-right: 4px solid #f59e0b;
 }
 
-/* Tooltip */
 .tooltip {
     position: relative;
     cursor: pointer;
@@ -50,7 +44,7 @@ body {
 
 .tooltip .tip {
     visibility: hidden;
-    width: 260px;
+    width: 270px;
     background: #1f2937;
     color: #fff;
     text-align: center;
@@ -70,39 +64,19 @@ body {
     opacity: 1;
 }
 
-/* متغيرات */
 .var {
     color: #f87171;
     border-bottom: 1px dashed;
     cursor: pointer;
 }
 
-/* قائمة */
 ul {
     padding-right: 20px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-    .custom-button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.custom-button:hover {
-    background-color: #0056b3;
-}
-
 </style>
 
 </head>
@@ -114,10 +88,9 @@ li {
     <!-- السؤال -->
     <div class="message question">
         <span class="tooltip">
-            س1: احسب القوة المؤثرة من كتلة مقدارها 1000 كجم على سطح الأرض
+            س: أذكر وحدات القياس الدولية لكل من (المساحة - الحجم - السرعة - القوة - ... إلخ)
             <span class="tip">
-                لحساب القوة المؤثرة نستخدم العلاقة: القوة = الكتلة × العجلة
-                وهنا العجلة هي عجلة الجاذبية الأرضية
+                المطلوب هو تحديد وحدة القياس لكل كمية في النظام الدولي (SI)
             </span>
         </span>
     </div>
@@ -125,55 +98,82 @@ li {
     <!-- الإجابة -->
     <div class="message answer">
 
-        <p><strong>القانون المستخدم:</strong></p>
-        <p>
-            تُعرّف القوة 
-            (<span class="var" title="F = القوة المؤثرة">F</span>) 
-            بأنها حاصل ضرب الكتلة 
-            (<span class="var" title="m = الكتلة">m</span>) 
-            في العجلة 
-            (<span class="var" title="a = العجلة">a</span>)
-        </p>
-
-        <p><strong>المعطيات:</strong></p>
         <ul>
+
             <li>
-                الكتلة (<span class="var" title="m = الكتلة">m</span>) = 1000 كجم
-            </li>
-            <li>
-                عجلة الجاذبية 
-                (<span class="var" title="g = عجلة الجاذبية الأرضية">g</span>) = 9.81 م/ث²
+                المساحة (<span class="var" title="Area = المساحة">Area</span>): متر مربع (م²)
                 <span class="tooltip">ⓘ
-                    <span class="tip">
-                        القوة التي تؤثر على 1 كجم تساوي 9.81 نيوتن
-                    </span>
+                    <span class="tip">الفدان ≈ 4200 م²</span>
                 </span>
             </li>
-        </ul>
 
-        <p><strong>التعويض في المعادلة:</strong></p>
-        <p>
-            (<span class="var" title="القوة">F</span> = 
-            <span class="var" title="الكتلة">m</span> × 
-            <span class="var" title="الجاذبية">g</span>)
-        </p>
-        <p>
-            F = 1000 × 9.81
-        </p>
+            <li>
+                الحجم (<span class="var" title="Volume = الحجم">Volume</span>): متر مكعب (م³)
+            </li>
 
-        <p><strong>النتيجة:</strong></p>
-        <p>
-            <span class="tooltip">
-                القوة = 9810 نيوتن
-                <span class="tip">
-                    النيوتن هو وحدة قياس القوة ويساوي القوة اللازمة لإكساب 1 كجم عجلة 1 م/ث²
+            <li>
+                السرعة الخطية (<span class="var" title="Velocity = السرعة">Velocity</span>): م/ث
+            </li>
+
+            <li>
+                السرعة الدورانية (<span class="var" title="n = السرعة الدورانية">n</span>): لفة/دقيقة
+            </li>
+
+            <li>
+                القوة (<span class="var" title="Force = القوة">Force</span>): نيوتن (N)
+                <span class="tooltip">ⓘ
+                    <span class="tip">هي القوة التي تكسب 1 كجم عجلة 1 م/ث²</span>
                 </span>
-            </span>
-        </p>
+            </li>
+
+            <li>
+                العزم (<span class="var" title="Torque = العزم">Torque</span>): نيوتن.متر
+            </li>
+
+            <li>
+                الشغل (<span class="var" title="Work = الشغل">Work</span>): جول (J)
+            </li>
+
+            <li>
+                طاقة الوضع (<span class="var" title="PE = طاقة الوضع">PE</span>): جول
+            </li>
+
+            <li>
+                طاقة الحركة (<span class="var" title="KE = طاقة الحركة">KE</span>): جول
+            </li>
+
+            <li>
+                الضغط (<span class="var" title="Pressure = الضغط">Pressure</span>): باسكال (N/m²)
+            </li>
+
+            <li>
+                التصرف (<span class="var" title="Q = التصرف">Q</span>): م³/ث
+            </li>
+
+            <li>
+                معدل الأداء (<span class="var" title="Field Capacity = معدل الأداء">Field Capacity</span>): فدان/ساعة
+            </li>
+
+            <li>
+                القدرة (<span class="var" title="Power = القدرة">Power</span>): واط (W)
+                <span class="tooltip">ⓘ
+                    <span class="tip">1 حصان = 736 واط</span>
+                </span>
+            </li>
+
+            <li>
+                الكفاءة (<span class="var" title="Efficiency = الكفاءة">Efficiency</span>): %
+                <span class="tooltip">ⓘ
+                    <span class="tip">نسبة بين القدرة الخارجة والداخلة</span>
+                </span>
+            </li>
+
+        </ul>
 
     </div>
 
 </div>
+
     <a href="Q2.html" class="custom-button">Q2</a>
 
 
